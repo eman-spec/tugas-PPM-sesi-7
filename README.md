@@ -50,6 +50,6 @@ Semua tangkapan layar merujuk pada file di dalam folder `screenshots/`:
 
 ## Hasil Pengujian (`flutter test`)
 
-Seluruh unit test pada `test/tips_view_model_test.dart` berhasil dijalankan 
+Seluruh unit test pada `test/tips_view_model_test.dart` berhasil dijalankan dengan sukses (100% lulus).
 
 ![Hasil Flutter Test](screenshots/flutter_test.png)

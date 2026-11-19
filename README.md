@@ -26,6 +26,58 @@ Halaman **Tips & Kesehatan Hewan** (`TipsScreen`) dirancang sebagai pusat edukas
 
 ---
 
+## Penerapan Struktur Folder (Arsitektur Berlapis)
+
+Sesuai instruksi nomor 10 pada panduan tugas, struktur folder project menerapkan arsitektur berlapis resmi Flutter:
+
+```
+lib/
+├── main.dart
+├── app.dart
+├── config/
+│   └── dependencies.dart
+├── domain/
+│   └── models/
+│       ├── jadwal_perawatan.dart          # <data_utama>
+│       ├── tugas_perawatan.dart           # <data_aksi>
+│       └── tips_hewan.dart                # <data_informasi>
+├── data/
+│   ├── services/
+│   │   └── pawtime_service.dart           # <nama_app>_service
+│   └── repositories/
+│       ├── jadwal_repository.dart         # <data_utama>_repository
+│       ├── tugas_repository.dart          # <data_aksi>_repository
+│       └── tips_repository.dart           # <data_informasi>_repository
+└── ui/
+    ├── core/                              # Tema & widget reusable
+    │   ├── app_theme.dart
+    │   ├── content_width.dart
+    │   ├── empty_view.dart
+    │   ├── error_view.dart
+    │   ├── hewan_avatar.dart
+    │   ├── kategori_style.dart
+    │   ├── loading_view.dart
+    │   └── theme_controller.dart
+    ├── shell/
+    │   └── app_shell.dart
+    ├── home/
+    │   ├── home_screen.dart
+    │   └── home_view_model.dart
+    ├── jadwal/                            # <halaman_daftar> (SegmentedButton)
+    │   ├── jadwal_screen.dart
+    │   └── jadwal_view_model.dart
+    ├── checklist/                         # <halaman_checklist> (CheckboxListTile)
+    │   ├── checklist_screen.dart
+    │   └── checklist_view_model.dart
+    └── tips/                              # <fitur_sendiri> (Tips & Kesehatan)
+        ├── tips_screen.dart
+        └── tips_view_model.dart
+test/
+└── tips_view_model_test.dart
+```
+
+---
+
 ## Screenshot Aplikasi
 
 Semua tangkapan layar merujuk pada file di dalam folder `screenshots/`:
